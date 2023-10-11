@@ -35,6 +35,31 @@
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
+
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('F09fSWzdIvD0zetaD');
+        })();
+    </script>
+
+	<script type="text/javascript">
+		window.onload = function() {
+			document.getElementById('contact-form').addEventListener('submit', function(event) {
+				event.preventDefault();
+				// these IDs from the previous steps
+				emailjs.sendForm('service_ucr24r2', 'template_qbgpi5a', this)
+					.then(function() {
+						console.log('SUCCESS!');
+					}, function(error) {
+						console.log('FAILED...', error);
+					});
+					event.target.reset();
+			});
+		}
+	</script>
+
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
@@ -429,27 +454,27 @@
 		</div>
 		<div class="choose animate-box">
 			<h2>Contact</h2>
-			<form action="#">
+			<form id="contact-form">
 				<div class="row form-group">
 					<div class="col-md-6">
-						<input type="text" id="fname" class="form-control" placeholder="Your firstname">
+						<input type="text" id="fname" class="form-control" placeholder="Your firstname" name="fname">
 					</div>
 				</div>
 				<div class="row form-group">
 					<div class="col-md-6">
-						<input type="text" id="lname" class="form-control" placeholder="Your lastname">
+						<input type="text" id="lname" class="form-control" placeholder="Your lastname" name="lname">
 					</div>
 				</div>
 
 				<div class="row form-group">
 					<div class="col-md-12">
-						<input type="text" id="email" class="form-control" placeholder="Your email address">
+						<input type="text" id="email" class="form-control" placeholder="Your email address" name="email">
 					</div>
 				</div>
 
 				<div class="row form-group">
 					<div class="col-md-12">
-						<input type="text" id="subject" class="form-control" placeholder="Your subject of this message">
+						<input type="text" id="subject" class="form-control" placeholder="Your subject of this message" name="subject">
 					</div>
 				</div>
 
@@ -459,7 +484,7 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<input type="submit" value="Send Message" class="btn btn-primary">
+					<button type="submit" value="Send Message" class="btn btn-primary">
 				</div>
 
 			</form>	
