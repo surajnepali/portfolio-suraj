@@ -1,23 +1,27 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Suraj Nepali</title>
+	<title>Suraj Nepali | Senior QA Automation Engineer</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Suraj Nepali, a dedicated and skilled Quality Assurance Engineer. With a passion for ensuring top-notch software quality, Suraj collaborates closely with development teams to identify and resolve defects, resulting in impeccable software products. Proficient in automated testing with Cypress and experienced in API testing using tools like Postman and Swagger, Suraj possesses a comprehensive understanding of leveraging these tools to enhance test coverage and software excellence. This portfolio showcases Suraj's professional journey and highlights his contributions to various projects, making him an asset in any QA endeavor." />
-	<meta name="keywords" content="Quality Assurance Engineer, Automated Testing, Cypress, API Testing, Postman, Swagger, Defect Resolution, Test Automation Tools, Bug Reporting, Test Closure, Task Management Software, ClickUp, JIRA, Trello, Agile Development, Learning Management System, Trekking Information System, Laundry Service Management, Restaurant Management System, Multivendor Book Store, QA Collaboration, Software Quality Enhancement." />
+	<meta name="description" content="Suraj Nepali is a Senior QA Automation Engineer and ISTQB Certified Tester from Pokhara, Nepal, with experience across the full software development lifecycle: requirements analysis, test planning, test automation with Playwright, Cypress and Selenium, API testing, AI testing and model validation, performance testing with JMeter and k6, and security testing." />
+	<meta name="keywords" content="Senior QA Automation Engineer, ISTQB Certified Tester, Quality Assurance Engineer, Test Automation, Playwright, Cypress, Selenium WebDriver, Cucumber, API Testing, Postman, Newman, Swagger, AI Testing, Model Validation, Performance Testing, JMeter, k6, Security Testing, OWASP Top 10, Database Testing, SQL, Requirements Analysis, QA Strategy, Release Notes, QA Mentoring, Agile, JIRA, ClickUp, Pokhara, Nepal" />
 	<meta name="author" content="Suraj Nepali" />
 
 
-	<meta property="og:title" content="Suraj Nepali"/>
-	<meta property="og:image" content="/images/suraj.jpg"/>
-	<meta property="og:url" content="www.surajnepali.com.np"/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content="Suraj Nepali, a dedicated and skilled Quality Assurance Engineer. With a passion for ensuring top-notch software quality, Suraj collaborates closely with development teams to identify and resolve defects, resulting in impeccable software products. Proficient in automated testing with Cypress and experienced in API testing using tools like Postman and Swagger, Suraj possesses a comprehensive understanding of leveraging these tools to enhance test coverage and software excellence. This portfolio showcases Suraj's professional journey and highlights his contributions to various projects, making him an asset in any QA endeavor."/>
-	<meta name="twitter:title" content="Suraj Nepali" />
-	<meta name="twitter:image" content="/images/suraj.jpg" />
-	<meta name="twitter:url" content="www.surajnepali.com.np" />
+	<link rel="canonical" href="https://www.surajnepali.com.np/" />
+
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Suraj Nepali | Senior QA Automation Engineer" />
+	<meta property="og:image" content="https://www.surajnepali.com.np/images/suraj.jpg" />
+	<meta property="og:url" content="https://www.surajnepali.com.np/" />
+	<meta property="og:site_name" content="Suraj Nepali" />
+	<meta property="og:description" content="Suraj Nepali is a Senior QA Automation Engineer and ISTQB Certified Tester from Pokhara, Nepal, with experience across the full software development lifecycle: requirements analysis, test planning, test automation with Playwright, Cypress and Selenium, API testing, AI testing and model validation, performance testing with JMeter and k6, and security testing." />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="Suraj Nepali | Senior QA Automation Engineer" />
+	<meta name="twitter:description" content="Suraj Nepali is a Senior QA Automation Engineer and ISTQB Certified Tester from Pokhara, Nepal, with experience across the full software development lifecycle: requirements analysis, test planning, test automation with Playwright, Cypress and Selenium, API testing, AI testing and model validation, performance testing with JMeter and k6, and security testing." />
+	<meta name="twitter:image" content="https://www.surajnepali.com.np/images/suraj.jpg" />
 
 	<link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
@@ -45,19 +49,37 @@
     </script>
 
 	<script type="text/javascript">
-		window.onload = function() {
-			document.getElementById('contact-form').addEventListener('submit', function(event) {
+		document.addEventListener('DOMContentLoaded', function() {
+			var form = document.getElementById('contact-form');
+			var button = document.getElementById('contact-submit');
+			var status = document.getElementById('contact-status');
+
+			function showStatus(type, text) {
+				status.className = 'contact-status contact-status-' + type;
+				status.textContent = text;
+				status.hidden = false;
+			}
+
+			form.addEventListener('submit', function(event) {
 				event.preventDefault();
-				// these IDs from the previous steps
+				button.disabled = true;
+				button.textContent = 'Sending...';
+				showStatus('sending', 'Sending your message...');
+
 				emailjs.sendForm('service_ucr24r2', 'template_qbgpi5a', this)
 					.then(function() {
-						console.log('SUCCESS!');
+						form.reset();
+						showStatus('success', "Thanks! Your message has been sent. I'll get back to you soon.");
 					}, function(error) {
 						console.log('FAILED...', error);
+						showStatus('error', "Your message couldn't be sent. Please try again, or email me directly at surajnepali7896@gmail.com.");
+					})
+					.then(function() {
+						button.disabled = false;
+						button.textContent = 'Send Message';
 					});
-					event.target.reset();
 			});
-		}
+		});
 	</script>
 
 	<!-- FOR IE9 below -->
@@ -70,6 +92,24 @@
 		
 	<div class="fh5co-loader"></div>
 	
+	<nav class="site-nav js-site-nav" aria-label="Main">
+		<div class="container">
+			<a href="#fh5co-header" class="site-nav-brand js-scroll">Suraj Nepali</a>
+			<button type="button" class="site-nav-toggle js-nav-toggle" aria-expanded="false" aria-controls="site-nav-links">
+				<span class="sr-only">Open menu</span>
+				<span class="bar"></span><span class="bar"></span><span class="bar"></span>
+			</button>
+			<ul class="site-nav-links" id="site-nav-links">
+				<li><a href="#fh5co-about" class="js-scroll">About</a></li>
+				<li><a href="#fh5co-resume" class="js-scroll">Experience</a></li>
+				<li><a href="#fh5co-features" class="js-scroll">Services</a></li>
+				<li><a href="#fh5co-work" class="js-scroll">Work</a></li>
+				<li><a href="#fh5co-consult" class="js-scroll site-nav-cta">Contact</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	
 	<div id="page">	
 	<header id="fh5co-header" class="fh5co-cover js-fullheight" role="banner" style="background-image:url(images/cover_bg_3.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
@@ -80,12 +120,16 @@
 						<div class="display-tc js-fullheight animate-box" data-animate-effect="fadeIn">
 							<div class="profile-thumb" style="background: url(images/suraj.jpg);"></div>
 							<h1><span>Suraj Nepali</span></h1>
-							<h3><span>QA Engineer | Automation Engineer | Software Engineer</span></h3>
+							<h3><span>Senior QA Automation Engineer | ISTQB Certified Tester</span></h3>
+							<p class="hero-cta">
+								<a href="#fh5co-work" class="btn btn-lg btn-hero-solid js-scroll">View My Work</a>
+								<a href="#fh5co-consult" class="btn btn-lg btn-hero-outline js-scroll">Get in Touch</a>
+							</p>
 							<p>
 								<ul class="fh5co-social-icons">
-									<li><a target="_blank" href="https://www.facebook.com/shurawz.ma/"><i class="icon-facebook2"></i></a></li>
-									<li><a target="_blank" href="https://www.linkedin.com/in/suraj-nepali-9a3253244/"><i class="icon-linkedin2"></i></a></li>
-									<li><a target="_blank" href="https://github.com/surajnepali"><i class="icon-github2"></i></a></li>
+									<!-- <li><a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/shurawz.ma/" aria-label="Facebook"><i class="icon-facebook2"></i></a></li> -->
+									<li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/nepalisuraj" aria-label="LinkedIn"><i class="icon-linkedin2"></i></a></li>
+									<li><a target="_blank" rel="noopener noreferrer" href="https://github.com/surajnepali" aria-label="GitHub"><i class="icon-github2"></i></a></li>
 								</ul>
 							</p>
 						</div>
@@ -106,20 +150,23 @@
 				<div class="col-md-4">
 					<ul class="info">
 						<li><span class="first-block">Full Name:</span><span class="second-block">Suraj Nepali</span></li>
-						<li><span class="first-block">Phone:</span><span class="second-block">+977 9806762451</span></li>
-						<li><span class="first-block">Email:</span><span class="second-block">surajnepali7896@gmail.com</span></li>
+						<li><span class="first-block">Phone:</span><span class="second-block"><a href="tel:+9779806762451">+977 9806762451</a></span></li>
+						<li><span class="first-block">Email:</span><span class="second-block"><a href="mailto:surajnepali7896@gmail.com">surajnepali7896@gmail.com</a></span></li>
 						<li><span class="first-block">Website:</span><span class="second-block">www.surajnepali.com.np</span></li>
+						<li><span class="first-block">Experience:</span><span class="second-block">4+ years in QA</span></li>
 						<li><span class="first-block">Address:</span><span class="second-block">Pokhara, Nepal</span></li>
 					</ul>
 				</div>
 				<div class="col-md-8">
 					<h2>Namaste</h2>
-					<p>As a Quality Assurance Engineer, I am responsible for ensuring that software products and applications meet the necessary quality standards and are free from defects by working closely with development teams to resolve any issues that arise during the testing process. I have experience in using Cypress to write automated tests and have a thorough understanding of how to use this powerful tool to identify bugs, improve test coverage, and enhance the overall quality of software products.</p>
+					<p>I'm a Quality Assurance Engineer with experience across the full software development lifecycle, from requirements analysis and test planning to automation, validation, and release. I focus on identifying ambiguities and risks early and collaborating with clients, developers, and stakeholders to deliver high-quality software.</p>
+					<p>My expertise includes test automation with Playwright and Cypress, API testing, AI testing, model validation, performance testing with JMeter and k6, and security testing. I also contribute to QA strategy and process improvement, establish testing practices and documentation from the ground up, and mentor junior QA engineers.</p>
+					<p>I'm particularly interested in Quality Engineering, Test Automation, AI Testing, and modern software testing practices, with a focus on improving quality, efficiency, and test coverage.</p>
 					<p>
 						<ul class="fh5co-social-icons">
-									<li><a target="_blank" href="https://www.facebook.com/shurawz.ma/"><i class="icon-facebook2"></i></a></li>
-									<li><a target="_blank" href="https://www.linkedin.com/in/suraj-nepali-9a3253244/"><i class="icon-linkedin2"></i></a></li>
-									<li><a target="_blank" href="https://github.com/surajnepali"><i class="icon-github2"></i></a></li>
+									<!-- <li><a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/shurawz.ma/" aria-label="Facebook"><i class="icon-facebook2"></i></a></li> -->
+									<li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/nepalisuraj" aria-label="LinkedIn"><i class="icon-linkedin2"></i></a></li>
+									<li><a target="_blank" rel="noopener noreferrer" href="https://github.com/surajnepali" aria-label="GitHub"><i class="icon-github2"></i></a></li>
 						</ul>
 					</p>
 				</div>
@@ -144,16 +191,19 @@
 							<div class="timeline-badge"><i class="icon-suitcase"></i></div>
 							<div class="timeline-panel">
 								<div class="timeline-heading">
-									<h3 class="timeline-title">Quality Assurance Engineer | Automation Engineer</h3>
-									<span class="company">Clinchtech - Sept 2022 - Current</span>
+									<h3 class="timeline-title">Senior Quality Assurance Engineer</h3>
+									<span class="company"><strong>Dalfin AI</strong><span class="timeline-date">Jun 2026 &ndash; Present</span></span>
 								</div>
 								<div class="timeline-body">
-									<p>End-to-end testing using an Automation testing tool</p>
-										<p>Cypress API testing using Postman and Swagger</p>
-										<p>API testing using Cypress Automation Testing Framework</p>
-										<p> Bug report, Test closure report</p>
-										<p>Good knowledge of Task Management Software like ClickUp, JIRA, and Trello</p>
-										<p>Agile Development Workflow</p>
+									<ul class="timeline-points">
+										<li>Drive end-to-end QA across multiple products, from requirements analysis to release</li>
+										<li>Review client requirements and acceptance criteria to find ambiguities, gaps and edge cases before design and development begin</li>
+										<li>Lead QA validation for Genesis, an AI-driven platform that turns natural-language prompts and Figma designs into deployable applications</li>
+										<li>FMS model validation and Playwright automation for WMS, FMS and MMS</li>
+										<li>Established API testing documentation from scratch; QA reports and release notes</li>
+										<li>Performance testing with Apache JMeter and k6, plus security testing</li>
+										<li>Mentor four junior QA engineers and improve QA processes and strategy</li>
+									</ul>
 								</div>
 							</div>
 						</li>
@@ -161,13 +211,72 @@
 							<div class="timeline-badge"><i class="icon-suitcase"></i></div>
 							<div class="timeline-panel">
 								<div class="timeline-heading">
-									<h3 class="timeline-title">Junior Quality Assurance Engineer</h3>
-									<span class="company">Blacktech - Jun 2022 - Sept 2022</span>
+									<h3 class="timeline-title">QA Automation Engineer</h3>
+									<span class="company"><strong>Bits Kraft</strong><span class="timeline-date">Jul 2025 &ndash; Jun 2026</span></span>
 								</div>
 								<div class="timeline-body">
-									<p>API testing using Swagger, Postman</p>
-										<p>Manual testing of in-house mobile app and web app Bug report, test report</p>
-										<p>Gained good knowledge of Test Automation Tools</p>
+									<ul class="timeline-points">
+										<li>Tested ConnectiveRx (CRx), a US healthcare application covering medical and pharmacy claims and HIPAA consents</li>
+										<li>UI and API automation using Selenium WebDriver</li>
+										<li>Worked with BAs and developers to understand features and covered every acceptance criterion</li>
+										<li>Coordinated sanity testing of features with other QA engineers</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li class="animate-box timeline-unverted">
+							<div class="timeline-badge"><i class="icon-suitcase"></i></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h3 class="timeline-title">Quality Assurance Engineer</h3>
+									<span class="company"><strong>Grepsr</strong><span class="timeline-date">Jan 2024 &ndash; Jul 2025</span></span>
+								</div>
+								<div class="timeline-body">
+									<ul class="timeline-points">
+										<li>Led the Cypress automation framework from scratch to CI/CD, covering 80% of regression and 100% of smoke test scenarios</li>
+										<li>Tested the Anomaly Detection AI feature that finds anomalies in extracted data</li>
+										<li>API testing and automation with Postman, endpoint monitoring with Postman Monitors, CI/CD runs with Newman</li>
+										<li>Database testing with SQL and security testing based on the OWASP Top 10 (Web and API)</li>
+										<li>Ran weekly defect triage meetings and contributed to root cause analysis</li>
+										<li>Smoke, sanity, regression and UAT demos for the Product Owner, Designer, CTO and stakeholders</li>
+										<li>Mentored junior QA engineers on Cypress best practices and test design</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li class="timeline-inverted animate-box">
+							<div class="timeline-badge"><i class="icon-suitcase"></i></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h3 class="timeline-title">Quality Assurance Engineer</h3>
+									<span class="company"><strong>ClinchTech</strong><span class="timeline-date">Sep 2022 &ndash; Jan 2024</span></span>
+								</div>
+								<div class="timeline-body">
+									<ul class="timeline-points">
+										<li>Worked on MeroPadhai (e-learning platform) and One Sys (mobile application)</li>
+										<li>Thorough manual API testing of MeroPadhai</li>
+										<li>Integrated Cucumber (Given/When/Then) feature files with Cypress</li>
+										<li>Performance testing with JMeter</li>
+										<li>Resolved requirement ambiguities with clients and followed a proper STLC</li>
+										<li>Mobile application testing; task management with ClickUp and JIRA</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li class="animate-box timeline-unverted">
+							<div class="timeline-badge"><i class="icon-suitcase"></i></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h3 class="timeline-title">Associate QA Engineer</h3>
+									<span class="company"><strong>Black Tech.</strong><span class="timeline-date">May 2022 &ndash; Sep 2022</span></span>
+								</div>
+								<div class="timeline-body">
+									<ul class="timeline-points">
+										<li>Started as an intern with exploratory and manual testing of RestroX, a restaurant management system</li>
+										<li>Focused on amount validation and verifying UI responses from the browser's Network tab</li>
+										<li>API testing with Postman across status codes and methods</li>
+										<li>Learned Cypress basics and reviewed test cases written by senior QA engineers</li>
+									</ul>
 								</div>
 							</div>
 						</li>
@@ -180,27 +289,26 @@
 							<div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
 							<div class="timeline-panel">
 								<div class="timeline-heading">
-									<h3 class="timeline-title">Bachelors Degree</h3>
-									<span class="company">Pokhara University (GCES) - 2017 - 2021</span>
+									<h3 class="timeline-title">Bachelor of Engineering - Computer Software Engineering</h3>
+									<span class="company"><strong>Gandaki College of Engineering and Science (Pokhara University)</strong><span class="timeline-date">Sep 2017 &ndash; Sep 2021</span></span>
 								</div>
 								<div class="timeline-body">
-									<p>
-										Algebra and Geometry,
-										Applied Physics,
-										Communication Techniques,
-										Computer Workshop,
-										Digital Logic,
-										Discrete Structure,
-										Object-Oriented Programming in C++,
-										Data Structure and Algorithm,
-										Database Management System,
-										Probability and Statistics,
-										Software Engineering Fundamentals,
-										Software Design and Architecture,
-										Network Programming,
-										Simulation and Modeling,
-										Distributed System & Cloud Computing,
-										Software Testing, Verification, Validation & QA</p>
+									<p class="coursework-label">Key coursework</p>
+									<div class="coursework"><span>Algebra and Geometry</span><span>Applied Physics</span><span>Communication Techniques</span><span>Computer Workshop</span><span>Digital Logic</span><span>Discrete Structure</span><span>Object-Oriented Programming in C++</span><span>Data Structure and Algorithm</span><span>Database Management System</span><span>Probability and Statistics</span><span>Software Engineering Fundamentals</span><span>Software Design and Architecture</span><span>Network Programming</span><span>Simulation and Modeling</span><span>Distributed System & Cloud Computing</span><span>Software Testing</span><span>Verification</span><span>Validation & QA</span></div>
+								</div>
+							</div>
+						</li>
+						<li class="timeline-inverted animate-box">
+							<div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h3 class="timeline-title">Schooling &amp; Higher Secondary (+2)</h3>
+									<span class="company"><strong>Srijana Secondary School</strong><span class="timeline-date">Apr 2002 &ndash; May 2017</span></span>
+								</div>
+								<div class="timeline-body">
+									<ul class="timeline-points">
+										<li>Completed all of my schooling, from early grades through Higher Secondary (+2)</li>
+									</ul>
 								</div>
 							</div>
 						</li>
@@ -223,26 +331,13 @@
 					<div class="col-md-4 text-center">
 						<div class="feature-left">
 							<span class="icon">
-								<i class="icon-paintbrush"></i>
+								<i class="icon-cogs"></i>
 							</span>
 							<div class="feature-copy">
 								<h3>Test Automation</h3>
-								<p></p>
+								<p>Playwright, Cypress and Selenium WebDriver frameworks built from scratch and wired into CI/CD</p>
 							</div>
 						</div>
-					</div>
-
-					<div class="col-md-4 text-center">
-						<div class="feature-left">
-							<span class="icon">
-								<i class="icon-briefcase"></i>
-							</span>
-							<div class="feature-copy">
-								<h3>Manual Testing</h3>
-								<p></p>
-							</div>
-						</div>
-
 					</div>
 					<div class="col-md-4 text-center">
 						<div class="feature-left">
@@ -251,126 +346,93 @@
 							</span>
 							<div class="feature-copy">
 								<h3>API Testing<br/>(Manual/Automation)</h3>
-								<p></p>
+								<p>Postman, Newman and Swagger, with API testing documentation and endpoint monitoring</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 text-center">
+						<div class="feature-left">
+							<span class="icon">
+								<i class="icon-lab"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>AI Testing &amp;<br/>Model Validation</h3>
+								<p>Validating AI-driven platforms, generated applications and forecast models</p>
 							</div>
 						</div>
 					</div>
 				</div>
-
-
 				<div class="row">
 					<div class="col-md-4 text-center">
-
+						<div class="feature-left">
+							<span class="icon">
+								<i class="icon-speedometer"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>Performance Testing</h3>
+								<p>Load and performance testing with Apache JMeter and k6</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 text-center">
+						<div class="feature-left">
+							<span class="icon">
+								<i class="icon-shield"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>Security Testing</h3>
+								<p>Web and API security testing guided by the OWASP Top 10</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 text-center">
+						<div class="feature-left">
+							<span class="icon">
+								<i class="icon-clipboard"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>Requirements Analysis</h3>
+								<p>Finding ambiguities, gaps and edge cases in requirements before development begins</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 text-center">
+						<div class="feature-left">
+							<span class="icon">
+								<i class="icon-briefcase"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>Manual &amp; Functional Testing</h3>
+								<p>Exploratory, smoke, sanity, regression, integration, mobile and UAT testing</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 text-center">
 						<div class="feature-left">
 							<span class="icon">
 								<i class="icon-bargraph"></i>
 							</span>
 							<div class="feature-copy">
-								<h3>Requirements Documentation</h3>
-								<p></p>
+								<h3>QA Reports &amp;<br/>Release Notes</h3>
+								<p>Clear visibility into testing progress, defects, risks and release readiness</p>
 							</div>
 						</div>
-
-					</div>
-
-					<div class="col-md-4 text-center">
-						<div class="feature-left">
-							<span class="icon">
-								<i class="icon-genius"></i>
-							</span>
-							<div class="feature-copy">
-								<h3>Test Closure <br/> Reporting</h3>
-								<p></p>
-							</div>
-						</div>
-
 					</div>
 					<div class="col-md-4 text-center">
 						<div class="feature-left">
 							<span class="icon">
-								<i class="icon-chat"></i>
+								<i class="icon-users"></i>
 							</span>
 							<div class="feature-copy">
-								<h3>QA Tutor</h3>
-								<p></p>
+								<h3>QA Strategy &amp; Mentoring</h3>
+								<p>Building QA processes and documentation, and mentoring junior QA engineers</p>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-
-	<div id="fh5co-skills" class="animate-box">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Skills</h2>
-				</div>
-			</div>
-			<div class="row row-pb-md">
-				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
-					<div class="chart" data-percent="90"><span><strong>Selenium</strong>90%</span></div>
-				</div>
-				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
-					<div class="chart" data-percent="95"><span><strong>Cypress</strong>90%</span></div>
-				</div>
-				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
-					<div class="chart" data-percent="93"><span><strong>Javascript</strong>90%</span></div>
-				</div>
-				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
-					<div class="chart" data-percent="90"><span><strong>Java</strong>85%</span></div>
-				</div>
-
-				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
-					<div class="chart" data-percent="89"><span><strong>Postman</strong>90%</span></div>
-				</div>
-				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
-					<div class="chart" data-percent="85"><span><strong>Swagger</strong>85%</span></div>
-				</div>
-				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
-					<div class="chart" data-percent="90"><span><strong>C++</strong>80%</span></div>
-				</div>
-				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
-					<div class="chart" data-percent="90"><span><strong>SQL</strong>70%</span></div>
-				</div>
-			</div>
-			<!-- <div class="row">
-				<div class="col-md-6">
-					<div class="progress-wrap">
-						<h3><span class="name-left">Javascript</span><span class="value-right">90%</span></h3>
-						<div class="progress">
-						  <div class="progress-bar progress-bar-1 progress-bar-striped active" role="progressbar"
-						  aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
-						  </div>
-						</div>
-					</div>
-					<div class="progress-wrap">
-						<h3><span class="name-left">Cypress</span><span class="value-right">90%</span></h3>
-						<div class="progress">
-						  <div class="progress-bar progress-bar-2 progress-bar-striped active" role="progressbar"
-						  aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
-						  </div>
-						</div>
-					</div>
-					<div class="progress-wrap">
-						<h3><span class="name-left">Swagger</span><span class="value-right">80%</span></h3>
-						<div class="progress">
-						  <div class="progress-bar progress-bar-3 progress-bar-striped active" role="progressbar"
-						  aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">
-						  </div>
-						</div>
-					</div>
-					<div class="progress-wrap">
-						<h3><span class="name-left">MySQL</span><span class="value-right">85%</span></h3>
-						<div class="progress">
-						  <div class="progress-bar progress-bar-4 progress-bar-striped active" role="progressbar"
-						  aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width:85%">
-						  </div>
-						</div>
-					</div>
-				</div>
-			</div> -->
 		</div>
 	</div>
 
@@ -381,53 +443,75 @@
 					<h2>Work</h2>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-4 text-center col-padding animate-box">
-					<a href="https://play.google.com/store/search?q=1Sys&c=apps&hl=en&gl=US" target="_blank" class="work" style="background-image: url(images/projects/1sys.jpg);background-color: white;">
-						<div class="desc">
-							<h3>One Sys</h3>
-							<span>Laundry Service App</span>
-						</div>
+			<div class="row case-studies">
+				<div class="col-md-6 animate-box">
+					<div class="case-study">
+						<span class="case-eyebrow">Dalfin AI &middot; 2026 &ndash; Present</span>
+						<h3>Genesis: AI App-Generation Platform</h3>
+						<p>A platform that turns natural-language prompts and Figma designs into deployable applications. I set up its testing approach, scenarios and quality standards from scratch.</p>
+						<div class="case-impact"><b>Scope:</b> PRD generation, backend and frontend generation, Figma integration, APIs and deployment</div>
+						<div class="case-chips"><span>AI Testing</span><span>Playwright</span><span>API Testing</span></div>
+					</div>
+				</div>
+				<div class="col-md-6 animate-box">
+					<div class="case-study">
+						<span class="case-eyebrow">Dalfin AI &middot; 2026 &ndash; Present</span>
+						<h3>Warehouse, Forecast &amp; Membership Systems</h3>
+						<p>Playwright automation for WMS, FMS and MMS, plus validation of the forecasting model. Wrote the team's API testing documentation from scratch.</p>
+						<div class="case-impact"><b>Also:</b> performance testing with JMeter and k6, security testing, QA reports and release notes</div>
+						<div class="case-chips"><span>Playwright</span><span>Model Validation</span><span>JMeter</span><span>k6</span></div>
+					</div>
+				</div>
+				<div class="col-md-6 animate-box">
+					<div class="case-study">
+						<span class="case-eyebrow">Bits Kraft &middot; 2025 &ndash; 2026</span>
+						<h3>ConnectiveRx: US Healthcare Platform</h3>
+						<p>Medical and pharmacy claims and HIPAA consents. Worked with BAs and developers to cover every acceptance criterion, then ran sanity testing with the QA team.</p>
+						<div class="case-impact"><b>Approach:</b> UI and API automation with Selenium WebDriver</div>
+						<div class="case-chips"><span>Selenium</span><span>Healthcare</span><span>API Automation</span></div>
+					</div>
+				</div>
+				<div class="col-md-6 animate-box">
+					<div class="case-study">
+						<span class="case-eyebrow">Grepsr &middot; 2024 &ndash; 2025</span>
+						<h3>Grepsr Data Platform &amp; Anomaly Detection AI</h3>
+						<p>Built the Cypress framework from scratch through to CI/CD and tested the AI feature that finds anomalies in extracted data.</p>
+						<div class="case-impact"><b>Result:</b> 80% of regression and 100% of smoke tests automated</div>
+						<div class="case-chips"><span>Cypress</span><span>Postman</span><span>Newman</span><span>OWASP</span></div>
+					</div>
+				</div>
+			</div>
+			<div class="row animate-box">
+				<div class="col-md-12 text-center">
+					<h3 class="work-subheading">Earlier Projects</h3>
+				</div>
+			</div>
+			<div class="row case-studies">
+				<div class="col-md-4 col-sm-6 animate-box">
+					<a href="https://meropadhai.com" target="_blank" rel="noopener noreferrer" class="case-study case-study-project">
+						<div class="case-thumb" style="background-image: url(images/projects/meropadhai.ccc03e20d83f0258d740.png);"></div>
+						<span class="case-eyebrow">ClinchTech &middot; 2022 &ndash; 2024</span>
+						<h3>Meropadhai</h3>
+						<p>E-learning platform. Thorough manual API testing, Cypress automation with Cucumber feature files, and performance testing with JMeter.</p>
+						<div class="case-chips"><span>Cypress</span><span>Cucumber</span><span>JMeter</span><span>API Testing</span></div>
 					</a>
 				</div>
-				<div class="col-md-4 text-center col-padding animate-box">
-					<a href="https://meropadhai.com" target="_blank" class="work" style="background-image: url(images/projects/meropadhai.ccc03e20d83f0258d740.png);background-color: white;">
-						<div class="desc">
-							<h3>Meropadhai</h3>
-							<span>Learning Management System</span>
-						</div>
+				<div class="col-md-4 col-sm-6 animate-box">
+					<a href="https://play.google.com/store/search?q=1Sys&c=apps&hl=en&gl=US" target="_blank" rel="noopener noreferrer" class="case-study case-study-project">
+						<div class="case-thumb" style="background-image: url(images/projects/1sys.jpg);"></div>
+						<span class="case-eyebrow">ClinchTech &middot; 2022 &ndash; 2024</span>
+						<h3>One Sys</h3>
+						<p>Laundry service mobile app and my first client project. Resolved requirement ambiguities with the client and followed a full STLC.</p>
+						<div class="case-chips"><span>Mobile Testing</span><span>Requirements</span><span>STLC</span></div>
 					</a>
 				</div>
-				<div class="col-md-4 text-center col-padding animate-box">
-					<a href="https://everestbuzz.com" target="_blank" class="work" style="background-image: url(images/projects/ever.png);background-color: white;">
-						<div class="desc">
-							<h3>Everest Buzz</h3>
-							<span>Tourist Package Service Web/Mobile </span>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 text-center col-padding animate-box">
-					<a href="https://merohomestay.com" target="_blank" class="work" style="background-image: url(images/projects/homestay.fc377f407b757bb51dcd.png);background-color: white;">
-						<div class="desc">
-							<h3>Mero HomeStay</h3>
-							<span>Home Stay Network System</span>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 text-center col-padding animate-box">
-					<a href="https://restrox.co" target="_blank" class="work" style="background-image: url(images/projects/restrox.png);background-color: white;">
-						<div class="desc">
-							<h3>RestroX</h3>
-							<span>Restaurant Management System</span>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 text-center col-padding animate-box">
-					<a href="https://booklifter.com" target="_blank" class="work" style="background-image: url(images/projects/booklifter.156ad3f2a7db51f86644.png); background-color: white;">
-						<div class="desc">
-							<h3>Book Lifter</h3>
-							<span>Multi Vendor Book Rental Web/Mobile</span>
-						</div>
+				<div class="col-md-4 col-sm-6 animate-box">
+					<a href="https://restrox.co" target="_blank" rel="noopener noreferrer" class="case-study case-study-project">
+						<div class="case-thumb" style="background-image: url(images/projects/restrox.png);"></div>
+						<span class="case-eyebrow">Black Tech. &middot; 2022</span>
+						<h3>RestroX</h3>
+						<p>Restaurant management system. Manual and exploratory testing focused on amount validation, plus API testing with Postman.</p>
+						<div class="case-chips"><span>Manual Testing</span><span>Postman</span><span>Exploratory</span></div>
 					</a>
 				</div>
 			</div>
@@ -440,68 +524,80 @@
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Hire Me!</h2>
-					<p> With a proven track record of bug-busting and enhancing quality, I am ready to amplify your team's success through unwavering dedication to excellence.</p>
-					<p><a href="#" class="btn btn-default btn-lg">Contact Us</a></p>
+					<h2>Let's Ship Quality Together</h2>
+					<p>From catching ambiguous requirements early to automating the tests that keep your releases safe, I help teams ship software they can trust. Have a product that needs a quality partner? Let's talk.</p>
+					<p><a href="#fh5co-consult" class="btn btn-default btn-lg js-scroll">Get in Touch</a></p>
 				</div>
 			</div>
 		</div>
 	</div>
 
 	<div id="fh5co-consult">
-		<div class="video fh5co-video" style="background-image: url(images/IMG-0368\ \(1\)-01.jpeg);">
+		<div class="video fh5co-video" style="background-image: url(images/contact.jpg);">
 			<div class="overlay"></div>
 		</div>
 		<div class="choose animate-box">
 			<h2>Contact</h2>
+			<p class="contact-intro">Have a product that needs testing, a QA role to fill, or a question about test automation? Send me a message and I'll get back to you within a couple of days.</p>
 			<form id="contact-form">
 				<div class="row form-group">
 					<div class="col-md-6">
-						<input type="text" id="fname" class="form-control" placeholder="Your firstname" name="fname"  required>
+						<label for="fname" class="sr-only">First name</label>
+						<input type="text" id="fname" class="form-control" placeholder="First name" name="fname" autocomplete="given-name" required>
 					</div>
-				</div>
-				<div class="row form-group">
 					<div class="col-md-6">
-						<input type="text" id="lname" class="form-control" placeholder="Your lastname" name="lname" required>
+						<label for="lname" class="sr-only">Last name</label>
+						<input type="text" id="lname" class="form-control" placeholder="Last name" name="lname" autocomplete="family-name" required>
 					</div>
 				</div>
 
 				<div class="row form-group">
 					<div class="col-md-12">
-						<input type="text" id="email" class="form-control" placeholder="Your email address" name="email" required>
+						<label for="email" class="sr-only">Email address</label>
+						<input type="email" id="email" class="form-control" placeholder="Email address" name="email" autocomplete="email" required>
 					</div>
 				</div>
 
 				<div class="row form-group">
 					<div class="col-md-12">
-						<input type="text" id="subject" class="form-control" placeholder="Your subject of this message" name="subject" required>
+						<label for="subject" class="sr-only">Subject</label>
+						<input type="text" id="subject" class="form-control" placeholder="Subject" name="subject" required>
 					</div>
 				</div>
 
 				<div class="row form-group">
 					<div class="col-md-12">
-						<textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Say something about us" required></textarea>
+						<label for="message" class="sr-only">Message</label>
+						<textarea name="message" id="message" cols="30" rows="8" class="form-control" placeholder="Tell me about your project, role or question" required></textarea>
 					</div>
 				</div>
 				<div class="form-group">
-					<button type="submit" value="Send Message" class="btn btn-primary" >Send Message</button>
+					<button type="submit" id="contact-submit" class="btn btn-primary">Send Message</button>
 				</div>
-
+				<p id="contact-status" class="contact-status" role="status" aria-live="polite" hidden></p>
+				<p class="contact-direct">Prefer email? Write to <span>surajnepali7896@gmail.com</span></p>
 			</form>	
 		</div>
 	</div>
 
 	</div>
 	
-	<div id="fh5co-footer">
+	<footer id="fh5co-footer">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 text-center">
-					<p>&copy; 2023 Suraj Nepali, All Rights Reserved. 
+					<p class="footer-name">Suraj Nepali</p>
+					<p class="footer-role">Senior QA Automation Engineer &middot; Pokhara, Nepal</p>
+					<ul class="fh5co-social-icons footer-social">
+						<li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/nepalisuraj" aria-label="LinkedIn"><i class="icon-linkedin2"></i></a></li>
+						<li><a target="_blank" rel="noopener noreferrer" href="https://github.com/surajnepali" aria-label="GitHub"><i class="icon-github2"></i></a></li>
+						<!-- <li><a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/shurawz.ma/" aria-label="Facebook"><i class="icon-facebook2"></i></a></li> -->
+					</ul>
+					<p class="footer-copy">&copy; 2026 Suraj Nepali. All rights reserved.</p>
 				</div>
 			</div>
 		</div>
-	</div>
+	</footer>
 
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>
@@ -517,11 +613,6 @@
 	<script src="js/jquery.waypoints.min.js"></script>
 	<!-- Stellar Parallax -->
 	<script src="js/jquery.stellar.min.js"></script>
-	<!-- Easy PieChart -->
-	<script src="js/jquery.easypiechart.min.js"></script>
-	<!-- Google Map -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
-	<script src="js/google_map.js"></script>
 	
 	<!-- Main -->
 	<script src="js/main.js"></script>
